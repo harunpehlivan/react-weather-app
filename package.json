@@ -2,7 +2,9 @@
   "scripts": {
     "serve:webpack": "webpack-dev-server --hot --inline --content-base ./src",
     "serve:json": "json-server db.json",
-    "start": "concurrently \"yarn serve:webpack\" \"yarn serve:json\""
+    "start": "concurrently \"yarn serve:webpack\" \"yarn serve:json\"",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
@@ -20,6 +22,8 @@
   "dependencies": {
     "axios": "^0.15.3",
     "concurrently": "^3.4.0",
-    "json-server": "^0.9.6"
-  }
+    "json-server": "^0.9.6",
+    "snyk": "^1.258.2"
+  },
+  "snyk": true
 }
